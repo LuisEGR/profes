@@ -26,6 +26,7 @@ class ProfesescomSpider(Spider):
                 "f": c_tr.xpath("./td[3]/b/text()").extract_first(),
                 "a": c_tr.xpath("./td[4]/b/text()").extract_first(),
                 "c": c_tr.xpath("./td[5]/b/text()").extract_first(),
+                "recomendado": len(c_tr.xpath("./td[9]/img").extract()),
                 "comentario": c_tr.xpath("./td[8]/text()").extract_first()
             }
             yield comentario
